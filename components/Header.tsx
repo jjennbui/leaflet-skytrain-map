@@ -1,10 +1,9 @@
 import React from 'react';
 
-
 export default function Header() {
   return (
     <header style={headerStyles}>
-        <img src='../images/logo.png' width={100}/>
+        <img style={logo}src='../images/logo.png' width={100}/>
       <h1 style={text}>Expo and Millenium Line Map</h1>
     </header>
   );
@@ -13,10 +12,14 @@ export default function Header() {
 const headerStyles = {
     backgroundColor: 'white',
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
 };
 
 const text = {
     margin: 10
+};
+
+const logo={
+    margin:15
 }
