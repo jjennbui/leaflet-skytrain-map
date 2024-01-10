@@ -124,9 +124,10 @@ const Map = () => (
     scrollWheelZoom={true}
   >
     <TileLayer
-      attribution='&copy; <a href="https://github.com/jjennbui/leafletMap.git">By Jenny Bui</a> contributors'
+      attribution='&copy; <a href="https://github.com/jjennbui/leaflet-skytrain-map.git">By Jenny Bui</a> contributors'
       url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
+
  {markedLocation}
     <Polyline pathOptions={blueOptions} positions={expoLine}></Polyline>
     <Polyline pathOptions={yellowOptions} positions={milleniumLine}></Polyline>
