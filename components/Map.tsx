@@ -54,7 +54,7 @@ const milleniumLine: [number, number][] =
 
 
 
-const locations = [
+const locations: { coordinates: [number, number]; name: string; }[] = [
   { coordinates: [49.2856, -123.1115], name: 'Waterfront' },
   { coordinates: [49.285616, -123.120157], name: 'Burrard' },
   { coordinates: [49.28275, -123.116639], name: 'Granville' },
@@ -95,17 +95,24 @@ const locations = [
 
 const blueOptions = { color: 'blue' };
 const yellowOptions = {color: 'yellow'}
-const center = [49.2258, -123.0039];
+const center:[number, number] = [49.2258, -123.0039];
 
-const LocationMarker = ({coordinates,name}) => (
-    <Marker position={coordinates} icon={icon}>
-      <Popup>{name}</Popup>
-    </Marker>
-  );
+
+interface ILocationProps {
+  coordinates: [number, number]
+  name: string
+}
+
+
+const LocationMarker = ({coordinates,name}: ILocationProps) => (
+  <Marker position={coordinates} icon={icon}>
+    <Popup>{name}</Popup>
+  </Marker>
+);
   
-  const markedLocation = locations.map((a, index) => (
-    <LocationMarker key={index} coordinates={a.coordinates} name={a.name} />
-  ));
+const markedLocation = locations.map((a, index) => (
+  <LocationMarker key={index} coordinates={a.coordinates} name={a.name} />
+));
 
 
 const Map = () => (
